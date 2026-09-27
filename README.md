@@ -1,7 +1,13 @@
-# py-programs
-Programs i made
+# Functional Python Toy Programs
 
-## Index
+### Index
 
-1. [A Simple Calculator](/programs/calc.py)
-2. [Wordle Game](/programs/Wordle.py)
+| # | Program | Source Code |
+|---|---------|-------------|
+| 1 | A Simple Calculator   | [calc.py](/programs/calc.py)     |
+| 2 | Wordle clone game     | [Wordle.py](/programs/Wordle.py) |
+
+---
+
+## Tour
+### 1 [A Simple Calculator](/programs/calc.py)
