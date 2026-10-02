@@ -72,15 +72,16 @@ def diff(x):
 #Global variables
 
 result = main()
-lock = random.choice(result)
+lock = tuple("hello")
 running = True
 history = []
 currhistory = []
+alphabet = list("abcdefghijklmnopqrstuvwxyz")
 
 def logic():
     print("WAITING FOR INPUT...")
     while True:
-        arr = input(f"Guess the word({len(lock)} characters) ({diff(lock)}): ")
+        arr = input(f"Guess the word({len(lock)} characters) ({diff(lock)}): ").lower()
         if len(arr) < len(lock):
             print("Invalid input. Please enter a word of the correct length.")
             continue
@@ -102,7 +103,14 @@ def logic():
         elif list2[i] in lock:
             curr[i] = '*'
         else: curr[i] = '-'
-           
+    
+    for i in curr:
+        if i in alphabet:
+            if i in curr:
+                alphabet[alphabet.index(i)] = i.upper()
+            else: alphabet[alphabet.index(i)] = '-'
+
+
     history.append(list2)
     currhistory.append(curr)
     for i in range(len(history)):
@@ -115,7 +123,8 @@ def logic():
     print(" ".join(list2))
     print("Best Guess:\t", end=" ")
     print(" ".join(curr)+"\n")
-    
+    print(" ".join(alphabet))
+
     if curr == list(lock):
         return "success"
     
